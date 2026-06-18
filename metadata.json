@@ -1,0 +1,6 @@
+{
+  "name": "Sing Geetham",
+  "description": "Convert conversational text transcripts and speech files into fully synthesized, harmonized songs with rhythmic chord sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

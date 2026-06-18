@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "users": {
+      "fields": {
+        "uid": "string",
+        "email": "string",
+        "displayName": "string",
+        "photoURL": "string",
+        "createdAt": "timestamp"
+      }
+    },
+    "tracks": {
+      "fields": {
+        "id": "string",
+        "userId": "string",
+        "userName": "string",
+        "title": "string",
+        "genre": "string",
+        "lyrics": "string",
+        "audioUrl": "string",
+        "chords": "string",
+        "arrangements": "string",
+        "createdAt": "timestamp",
+        "likes": "number"
+      }
+    },
+    "jams": {
+      "fields": {
+        "id": "string",
+        "title": "string",
+        "creatorId": "string",
+        "creatorName": "string",
+        "genre": "string",
+        "peersCount": "number",
+        "tracks": "array",
+        "createdAt": "timestamp",
+        "isActive": "boolean"
+      }
+    }
+  }
+}
