@@ -334,6 +334,7 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                   }}
                   className="flex items-center gap-1.5 focus:outline-none"
                   title="Seamless Toggle Speaking/Singing"
+                  aria-label="Toggle Speaking or Singing Mode"
                 >
                   {isSingingMode ? (
                     <ToggleRight className="w-8 h-8 text-amber-500" />
@@ -405,6 +406,7 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                   disabled={isLoading}
                   className="bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-lg text-amber-500 transition flex items-center justify-center"
                   title="Resynthesize Melody"
+                  aria-label="Resynthesize Melody"
                 >
                   <RefreshCw className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
                 </button>
@@ -427,6 +429,7 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                   ? "bg-rose-600 hover:bg-rose-500 text-white shadow-rose-600/20" 
                   : "bg-amber-500 hover:bg-amber-400 text-black font-extrabold shadow-amber-500/20 duration-300 transform hover:scale-105"
               }`}
+              aria-label={isCallActive ? "End Call" : "Start Call"}
             >
               {isCallActive ? <PhoneOff className="w-5 h-5 font-bold" /> : <Phone className="w-5 h-5 font-bold" />}
             </button>
