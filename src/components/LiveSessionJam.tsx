@@ -344,6 +344,8 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                     id="jam_btn_send_chat"
                     onClick={handleSendLiveMessage}
                     className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300"
+                    title="Send message"
+                    aria-label="Send message"
                   >
                     <Send className="w-3.5 h-3.5" />
                   </button>

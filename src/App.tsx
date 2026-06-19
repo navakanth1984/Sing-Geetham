@@ -489,6 +489,7 @@ Exported via Sing Geetham Professional Music Workflow.
                   onClick={handleSignOut}
                   className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
                   title="Sign Out Session"
+                  aria-label="Sign Out Session"
                 >
                   <LogOut className="w-3.5 h-3.5" />
                 </button>
@@ -763,6 +764,7 @@ Exported via Sing Geetham Professional Music Workflow.
                               onClick={() => handleExportTrackData(track.title, track.chords || ["C", "F"], track.lyrics)}
                               className="text-slate-400 hover:text-slate-200 transition"
                               title="Download Chord Progression Sheet"
+                              aria-label="Download Chord Progression Sheet"
                             >
                               <Download className="w-3.5 h-3.5" />
                             </button>
