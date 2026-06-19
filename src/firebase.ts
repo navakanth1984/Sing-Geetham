@@ -3,12 +3,12 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/
 import { getFirestore } from "firebase/firestore";
 
 let firebaseConfig = {
-  apiKey: "AIzaSyByF7zb9jen-WXE0nDUIcKCG2Pe9oHv8No",
-  authDomain: "gen-lang-client-0971332173.firebaseapp.com",
-  projectId: "gen-lang-client-0971332173",
-  storageBucket: "gen-lang-client-0971332173.firebasestorage.app",
-  messagingSenderId: "639783139725",
-  appId: "1:639783139725:web:7184208332c3d47a5da5c4"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize app securely
