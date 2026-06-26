@@ -486,8 +486,9 @@ Exported via Sing Geetham Professional Music Workflow.
                 <span className="text-xs font-bold text-slate-200 truncate max-w-[120px]">{user.displayName}</span>
                 <button
                   id="sign_out_button"
+                  aria-label="Sign Out"
                   onClick={handleSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
+                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md"
                   title="Sign Out Session"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -760,8 +761,9 @@ Exported via Sing Geetham Professional Music Workflow.
                             {/* Scores export from feed */}
                             <button
                               id={`dl_track_score_${track.id}`}
+                              aria-label={`Download chord sheet for ${track.title}`}
                               onClick={() => handleExportTrackData(track.title, track.chords || ["C", "F"], track.lyrics)}
-                              className="text-slate-400 hover:text-slate-200 transition"
+                              className="text-slate-400 hover:text-slate-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md p-1"
                               title="Download Chord Progression Sheet"
                             >
                               <Download className="w-3.5 h-3.5" />
