@@ -122,8 +122,9 @@ export default function SoundPackLibrary() {
 
                   <button
                     id={`audition_stem_${stem.name.replace(/\s+/g, '')}`}
+                    aria-label={isPlaying ? `Stop ${stem.name}` : `Play ${stem.name}`}
                     onClick={() => handleAuditionStem(stem.name, stem.frequencyConfig[0], activePack.genre)}
-                    className={`p-2 rounded-xl transition ${
+                    className={`p-2 rounded-xl transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                       isPlaying 
                         ? "bg-amber-500/20 text-amber-400 border border-amber-500/40" 
                         : "bg-white/5 hover:bg-white/10 text-amber-500 border border-white/10"
