@@ -332,8 +332,9 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                        setIsSynthPlaying(false);
                      }
                   }}
-                  className="flex items-center gap-1.5 focus:outline-none"
+                  className="flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 rounded-full"
                   title="Seamless Toggle Speaking/Singing"
+                  aria-label={isSingingMode ? "Switch to Speaking Mode" : "Switch to Singing Mode"}
                 >
                   {isSingingMode ? (
                     <ToggleRight className="w-8 h-8 text-amber-500" />
@@ -403,8 +404,9 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                   id="reprocess_call_song"
                   onClick={() => convertConversationToSong()}
                   disabled={isLoading}
-                  className="bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-lg text-amber-500 transition flex items-center justify-center"
+                  className="bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-lg text-amber-500 transition flex items-center justify-center focus-visible:ring-2 focus-visible:ring-amber-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
                   title="Resynthesize Melody"
+                  aria-label="Resynthesize Melody"
                 >
                   <RefreshCw className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
                 </button>
@@ -422,11 +424,12 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
             <button
               id="call_toggle_btn"
               onClick={handleToggleCall}
-              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center ${
+              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center focus-visible:ring-4 focus-visible:ring-amber-500/50 focus-visible:outline-none ${
                 isCallActive 
                   ? "bg-rose-600 hover:bg-rose-500 text-white shadow-rose-600/20" 
                   : "bg-amber-500 hover:bg-amber-400 text-black font-extrabold shadow-amber-500/20 duration-300 transform hover:scale-105"
               }`}
+              aria-label={isCallActive ? "End call" : "Start call"}
             >
               {isCallActive ? <PhoneOff className="w-5 h-5 font-bold" /> : <Phone className="w-5 h-5 font-bold" />}
             </button>
