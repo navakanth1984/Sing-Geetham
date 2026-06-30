@@ -440,7 +440,7 @@ Exported via Sing Geetham Professional Music Workflow.
           </div>
 
           {/* Tab Navigation links */}
-          <nav className="flex gap-2 flex-wrap justify-center">
+          <nav role="tablist" aria-label="Main Navigation" className="flex gap-2 flex-wrap justify-center">
             {[
               { id: "composer", label: "Melody Composer", icon: Sparkles },
               { id: "call_mock", label: "Seamless Calls Interface", icon: Tv },
@@ -453,12 +453,15 @@ Exported via Sing Geetham Professional Music Workflow.
                 <button
                   key={tab.id}
                   id={`tab_select_${tab.id}`}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls="rendering_stage_workspace"
                   onClick={() => {
                     setActiveTab(tab.id as any);
                     stopAllSynthesizers();
                     setIsPlaybackActive(false);
                   }}
-                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0B] ${
                     isActive
                       ? "bg-amber-500 text-black border-amber-600 shadow-[0_0_15px_rgba(245,158,11,0.4)]"
                       : "text-slate-400 border-white/5 bg-white/5 hover:border-amber-500/50 hover:text-slate-200"
