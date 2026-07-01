@@ -487,8 +487,9 @@ Exported via Sing Geetham Professional Music Workflow.
                 <button
                   id="sign_out_button"
                   onClick={handleSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
+                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
                   title="Sign Out Session"
+                  aria-label="Sign Out"
                 >
                   <LogOut className="w-3.5 h-3.5" />
                 </button>
@@ -522,7 +523,7 @@ Exported via Sing Geetham Professional Music Workflow.
                 
                 <div className="bg-white/5 p-6 rounded-2xl border border-white/10 space-y-4 shadow-2xl">
                   <div className="flex justify-between items-center">
-                    <span className="text-[11px] uppercase tracking-widest text-amber-500 font-bold">Acoustic Conversational Script</span>
+                    <label htmlFor="composer_dialogue_textarea" className="text-[11px] uppercase tracking-widest text-amber-500 font-bold">Acoustic Conversational Script</label>
                     <span className="text-[10px] font-mono bg-white/5 text-slate-300 font-semibold px-2 py-0.5 rounded border border-white/10 uppercase tracking-widest">
                       Vocal Vocoder Synthesis
                     </span>
@@ -537,7 +538,7 @@ Exported via Sing Geetham Professional Music Workflow.
                     value={promptText}
                     onChange={(e) => setPromptText(e.target.value)}
                     placeholder="Enter chat conversation, general words or spoken scripts..."
-                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs font-sans text-slate-200 outline-none focus:border-amber-500 leading-relaxed h-[130px] resize-none shadow-inner"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs font-sans text-slate-200 outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500 leading-relaxed h-[130px] resize-none shadow-inner"
                   />
 
                   {/* Style/Genre selection */}
@@ -751,7 +752,7 @@ Exported via Sing Geetham Professional Music Workflow.
                             <button
                               id={`like_track_${track.id}`}
                               onClick={() => handleLikeTrack(track)}
-                              className="flex items-center gap-1 text-rose-400 hover:text-rose-300 transition-all font-bold"
+                              className="flex items-center gap-1 text-rose-400 hover:text-rose-300 transition-all font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 rounded p-0.5"
                             >
                               <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
                               <span>{track.likes || 0}</span>
@@ -761,8 +762,9 @@ Exported via Sing Geetham Professional Music Workflow.
                             <button
                               id={`dl_track_score_${track.id}`}
                               onClick={() => handleExportTrackData(track.title, track.chords || ["C", "F"], track.lyrics)}
-                              className="text-slate-400 hover:text-slate-200 transition"
+                              className="text-slate-400 hover:text-slate-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded p-0.5"
                               title="Download Chord Progression Sheet"
+                              aria-label="Download Chord Progression Sheet"
                             >
                               <Download className="w-3.5 h-3.5" />
                             </button>

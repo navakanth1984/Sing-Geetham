@@ -56,7 +56,7 @@ export default function CreditQuotaManager({
       <button
         id="billing_quota_dropdown_btn"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-amber-500/50 hover:text-slate-100 transition-all cursor-pointer select-none"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-slate-300 hover:border-amber-500/50 hover:text-slate-100 transition-all cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
         title="Check Active Rupee Promo Credits & API billing Quotas"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse inline-block" />
@@ -183,7 +183,7 @@ export default function CreditQuotaManager({
               id="billing_reset_credits_btn"
               onClick={handleReset}
               disabled={isResetting}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-white/15 bg-white/5 text-amber-500 hover:text-black hover:bg-amber-500 text-[10px] uppercase font-bold tracking-wider transition-all duration-300 cursor-pointer select-none"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-white/15 bg-white/5 text-amber-500 hover:text-black hover:bg-amber-500 text-[10px] uppercase font-bold tracking-wider transition-all duration-300 cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
             >
               <RefreshCw className={`w-3 h-3 ${isResetting ? "animate-spin" : ""}`} />
               <span>{isResetting ? "Refunding..." : "Refill Full Balances"}</span>
