@@ -1,0 +1,3 @@
+## 2025-03-01 - Interactive Icon-Only Elements Require Explicit ARIA Labels and Focus States
+**Learning:** Icon-only buttons (like play/stop toggles for audio stems) present a significant accessibility barrier. Screen readers may announce them as unlabelled buttons, and keyboard users may not see when they are focused, leading to confusion about their function and current state.
+**Action:** Always provide explicit dynamic `aria-label`s for icon-only toggles (e.g., `aria-label={isPlaying ? "Stop [item]" : "Play [item]"}`) and ensure clear focus indicators using Tailwind's `focus-visible` utility classes (e.g., `focus-visible:ring-2 focus-visible:ring-[color] focus-visible:outline-none`).
