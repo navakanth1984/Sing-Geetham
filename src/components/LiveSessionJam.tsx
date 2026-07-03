@@ -209,18 +209,20 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
               <input
                 id="jam_input_title"
                 type="text"
+                aria-label="Jam session title"
                 placeholder="Give it an upbeat title..."
                 value={newSessionTitle}
                 onChange={(e) => setNewSessionTitle(e.target.value)}
-                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 font-medium"
+                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-medium"
               />
 
               <div className="flex gap-2">
                 <select
                   id="jam_select_genre"
+                  aria-label="Jam session genre"
                   value={newSessionGenre}
                   onChange={(e) => setNewSessionGenre(e.target.value)}
-                  className="bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none flex-1 font-bold"
+                  className="bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex-1 font-bold"
                 >
                   <option value="pop">Pop Dance</option>
                   <option value="jazz">Lively Jazz</option>
@@ -334,16 +336,18 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                   <input
                     id="jam_chat_msg"
                     type="text"
+                    aria-label="Chat message"
                     placeholder="Suggest a beat, tell peers to trigger chorus..."
                     value={chatMessage}
                     onChange={(e) => setChatMessage(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSendLiveMessage()}
-                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 font-medium"
+                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 font-medium"
                   />
                   <button
                     id="jam_btn_send_chat"
                     onClick={handleSendLiveMessage}
-                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300"
+                    aria-label="Send message"
+                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 focus-visible:ring-offset-[#0A0A0B]"
                   >
                     <Send className="w-3.5 h-3.5" />
                   </button>
