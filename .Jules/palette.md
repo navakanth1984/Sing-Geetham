@@ -1,0 +1,3 @@
+## 2026-07-04 - Icon-Only Button Accessibility Pattern
+**Learning:** Discovered a recurring pattern in this app's components (`App.tsx` and `InteractiveCallMock.tsx`) where icon-only buttons lacked both `aria-label` attributes for screen readers and visible focus states (`focus-visible`) for keyboard navigation. This made key actions (like signing out, downloading scores, and toggling features) completely inaccessible to non-mouse users.
+**Action:** Always verify that buttons containing only icons have explicit `aria-label` attributes and apply Tailwind's `focus-visible:ring-2 focus-visible:outline-none` utilities to ensure the interaction is accessible to all users.
