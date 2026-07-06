@@ -1,0 +1,3 @@
+## 2024-06-25 - File Input Keyboard Accessibility
+**Learning:** Using `display: none` or `hidden` utility classes on `<input type="file">` entirely removes the input from the browser's accessibility tree and tab order.
+**Action:** Always use `.sr-only` (screen-reader only) for visually hiding the actual `<input>`, and apply `focus-within` styles on its parent `<label>` to give keyboard users a visual focus indicator when tabbing through a page.
