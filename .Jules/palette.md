@@ -1,0 +1,3 @@
+## 2024-05-18 - Input and Icon-only Button Accessibility Patterns
+**Learning:** Found a consistent pattern across custom interactive components (inputs, selects, textareas, and icon-only buttons) lacking both ARIA descriptive contexts (`aria-label`) and explicit keyboard focus states (`focus-visible`). This makes screen reader traversal confusing and keyboard navigation invisible to users.
+**Action:** When adding new form controls or icon-only actions, always pair them with an explicit `aria-label` (or `<label>`) and implement `focus-visible` utility classes (e.g., `focus-visible:ring-2`) to guarantee accessibility.

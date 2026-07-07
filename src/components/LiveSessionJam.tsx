@@ -212,7 +212,8 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                 placeholder="Give it an upbeat title..."
                 value={newSessionTitle}
                 onChange={(e) => setNewSessionTitle(e.target.value)}
-                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 font-medium"
+                aria-label="Jam session title"
+                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500/50 font-medium"
               />
 
               <div className="flex gap-2">
@@ -220,7 +221,8 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                   id="jam_select_genre"
                   value={newSessionGenre}
                   onChange={(e) => setNewSessionGenre(e.target.value)}
-                  className="bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none flex-1 font-bold"
+                  aria-label="Select jam session genre"
+                  className="bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 flex-1 font-bold"
                 >
                   <option value="pop">Pop Dance</option>
                   <option value="jazz">Lively Jazz</option>
@@ -308,7 +310,8 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                     value={activeSession.lyrics}
                     onChange={(e) => handleUpdateNotes(e.target.value)}
                     placeholder="Contribute lyrics and words directly..."
-                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs text-slate-100 h-[110px] outline-none focus:border-amber-500 leading-relaxed font-sans resize-none font-medium"
+                    aria-label="Collaborative Lyrics Pad"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs text-slate-100 h-[110px] outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500/50 leading-relaxed font-sans resize-none font-medium"
                   />
                 </div>
               </div>
@@ -338,12 +341,15 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                     value={chatMessage}
                     onChange={(e) => setChatMessage(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSendLiveMessage()}
-                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 font-medium"
+                    aria-label="Chat message"
+                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500/50 font-medium"
                   />
                   <button
                     id="jam_btn_send_chat"
                     onClick={handleSendLiveMessage}
-                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300"
+                    aria-label="Send message"
+                    title="Send message"
+                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300 focus-visible:ring-2 focus-visible:ring-amber-500/50"
                   >
                     <Send className="w-3.5 h-3.5" />
                   </button>
