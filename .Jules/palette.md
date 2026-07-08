@@ -1,0 +1,3 @@
+## 2024-05-15 - Missing Accessible Names on Interactive Elements
+**Learning:** Several custom icon-only buttons (like sign out, like track, download scores, chat send) and some prominent inputs (like the chat input and session title) lack explicit `aria-label` attributes. This completely hides their purpose from screen reader users, violating accessibility standards.
+**Action:** Always verify that every interactive element, especially icon-only buttons and form inputs lacking explicit `<label>` tags, has a descriptive `aria-label` attribute and receives clear `focus-visible` styles for keyboard navigation.

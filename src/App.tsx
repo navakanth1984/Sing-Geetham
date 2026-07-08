@@ -486,8 +486,9 @@ Exported via Sing Geetham Professional Music Workflow.
                 <span className="text-xs font-bold text-slate-200 truncate max-w-[120px]">{user.displayName}</span>
                 <button
                   id="sign_out_button"
+                  aria-label="Sign Out Session"
                   onClick={handleSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
+                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded-sm"
                   title="Sign Out Session"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -534,10 +535,11 @@ Exported via Sing Geetham Professional Music Workflow.
 
                   <textarea
                     id="composer_dialogue_textarea"
+                    aria-label="Chat conversation or spoken scripts"
                     value={promptText}
                     onChange={(e) => setPromptText(e.target.value)}
                     placeholder="Enter chat conversation, general words or spoken scripts..."
-                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs font-sans text-slate-200 outline-none focus:border-amber-500 leading-relaxed h-[130px] resize-none shadow-inner"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-xs font-sans text-slate-200 outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500 leading-relaxed h-[130px] resize-none shadow-inner"
                   />
 
                   {/* Style/Genre selection */}
@@ -750,8 +752,9 @@ Exported via Sing Geetham Professional Music Workflow.
                             {/* Like trigger */}
                             <button
                               id={`like_track_${track.id}`}
+                              aria-label={`Like ${track.title}`}
                               onClick={() => handleLikeTrack(track)}
-                              className="flex items-center gap-1 text-rose-400 hover:text-rose-300 transition-all font-bold"
+                              className="flex items-center gap-1 text-rose-400 hover:text-rose-300 transition-all font-bold focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded-sm"
                             >
                               <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
                               <span>{track.likes || 0}</span>
@@ -760,8 +763,9 @@ Exported via Sing Geetham Professional Music Workflow.
                             {/* Scores export from feed */}
                             <button
                               id={`dl_track_score_${track.id}`}
+                              aria-label="Download Chord Progression Sheet"
                               onClick={() => handleExportTrackData(track.title, track.chords || ["C", "F"], track.lyrics)}
-                              className="text-slate-400 hover:text-slate-200 transition"
+                              className="text-slate-400 hover:text-slate-200 transition focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded-sm"
                               title="Download Chord Progression Sheet"
                             >
                               <Download className="w-3.5 h-3.5" />
