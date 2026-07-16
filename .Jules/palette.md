@@ -1,0 +1,3 @@
+## 2025-03-08 - Media Upload Accessibility in InteractiveCallMock
+**Learning:** Using `display: none` (via Tailwind's `hidden` class) on an `<input type="file">` element inside a `<label>` hides it from screen readers and removes it from the keyboard focus flow entirely. This makes it impossible for keyboard-only users to reach the input to upload a file.
+**Action:** Always use `sr-only` instead of `hidden` for file inputs so they remain in the focus order and are readable by screen readers. Additionally, since the input itself is invisible, apply `focus-within` pseudo-classes to the parent `<label>` to display visual focus indicators (like outline or rings) when the hidden input receives focus via tabbing.
