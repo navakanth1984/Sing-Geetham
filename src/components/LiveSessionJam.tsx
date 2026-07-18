@@ -335,15 +335,17 @@ export default function LiveSessionJam({ currentUser }: LiveSessionJamProps) {
                     id="jam_chat_msg"
                     type="text"
                     placeholder="Suggest a beat, tell peers to trigger chorus..."
+                    aria-label="Chat message"
                     value={chatMessage}
                     onChange={(e) => setChatMessage(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSendLiveMessage()}
-                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 font-medium"
+                    className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-xs text-slate-200 outline-none focus:border-amber-500 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500 font-medium"
                   />
                   <button
                     id="jam_btn_send_chat"
                     onClick={handleSendLiveMessage}
-                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300"
+                    aria-label="Send message"
+                    className="bg-white hover:bg-amber-500 text-black p-2.5 rounded-lg transition-all duration-300 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500"
                   >
                     <Send className="w-3.5 h-3.5" />
                   </button>

@@ -487,7 +487,8 @@ Exported via Sing Geetham Professional Music Workflow.
                 <button
                   id="sign_out_button"
                   onClick={handleSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
+                  aria-label="Sign Out Session"
+                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500 rounded"
                   title="Sign Out Session"
                 >
                   <LogOut className="w-3.5 h-3.5" />
