@@ -265,12 +265,12 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
             Share audio or video recordings. Our system extracts spoken vowels and maps them with a rhythm backing.
           </p>
 
-          <label className="flex flex-col items-center justify-center p-5 border border-dashed border-white/10 hover:border-amber-500/50 rounded-xl cursor-pointer bg-black/40 hover:bg-white/5 transition-all">
+          <label className="flex flex-col items-center justify-center p-5 border border-dashed border-white/10 hover:border-amber-500/50 focus-within:ring-2 focus-within:ring-amber-500 rounded-xl cursor-pointer bg-black/40 hover:bg-white/5 transition-all">
             <input 
               id="file_speech_extractor"
               type="file" 
               accept="audio/*,video/*" 
-              className="hidden" 
+              className="sr-only"
               onChange={handleMediaUploadAndTranscribe}
             />
             {mediaFile ? (
@@ -323,6 +323,7 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                 {/* Seamless toggle switch */}
                 <button
                   id="toggle_speak_sing_mode"
+                  aria-label={isSingingMode ? "Switch to speaking mode" : "Switch to singing mode"}
                   onClick={() => {
                      setIsSingingMode(!isSingingMode);
                      if (!isSingingMode) {
@@ -332,7 +333,7 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
                        setIsSynthPlaying(false);
                      }
                   }}
-                  className="flex items-center gap-1.5 focus:outline-none"
+                  className="flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-full"
                   title="Seamless Toggle Speaking/Singing"
                 >
                   {isSingingMode ? (
@@ -401,9 +402,10 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
               {isCallActive && isSingingMode && (
                 <button
                   id="reprocess_call_song"
+                  aria-label="Resynthesize Melody"
                   onClick={() => convertConversationToSong()}
                   disabled={isLoading}
-                  className="bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-lg text-amber-500 transition flex items-center justify-center"
+                  className="bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-lg text-amber-500 transition flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
                   title="Resynthesize Melody"
                 >
                   <RefreshCw className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
@@ -421,8 +423,9 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
           <div className="flex justify-center items-center gap-4 pt-1">
             <button
               id="call_toggle_btn"
+              aria-label={isCallActive ? "End call" : "Start call"}
               onClick={handleToggleCall}
-              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center ${
+              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-500/50 ${
                 isCallActive 
                   ? "bg-rose-600 hover:bg-rose-500 text-white shadow-rose-600/20" 
                   : "bg-amber-500 hover:bg-amber-400 text-black font-extrabold shadow-amber-500/20 duration-300 transform hover:scale-105"
