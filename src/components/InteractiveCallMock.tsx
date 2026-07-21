@@ -265,12 +265,12 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
             Share audio or video recordings. Our system extracts spoken vowels and maps them with a rhythm backing.
           </p>
 
-          <label className="flex flex-col items-center justify-center p-5 border border-dashed border-white/10 hover:border-amber-500/50 rounded-xl cursor-pointer bg-black/40 hover:bg-white/5 transition-all">
+          <label className="flex flex-col items-center justify-center p-5 border border-dashed border-white/10 hover:border-amber-500/50 rounded-xl cursor-pointer bg-black/40 hover:bg-white/5 transition-all focus-within:ring-2 focus-within:ring-amber-500 focus-within:ring-offset-2 focus-within:ring-offset-black focus-within:outline-none">
             <input 
               id="file_speech_extractor"
               type="file" 
               accept="audio/*,video/*" 
-              className="hidden" 
+              className="sr-only"
               onChange={handleMediaUploadAndTranscribe}
             />
             {mediaFile ? (
