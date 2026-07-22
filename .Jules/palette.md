@@ -1,0 +1,3 @@
+## 2025-05-18 - File Input Keyboard Accessibility
+**Learning:** Using `display: none` or `hidden` classes on native `<input type="file">` elements removes them from the tab order, making them completely inaccessible to keyboard users, even if the parent `<label>` is clickable.
+**Action:** Always use `.sr-only` (visually hidden but still in DOM and focusable) for file inputs, and apply `:focus-within` styles to the parent `<label>` to display the focus state visually to the user.
