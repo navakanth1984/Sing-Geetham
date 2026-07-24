@@ -1,0 +1,3 @@
+## 2026-07-24 - [Interactive Icon Buttons Accessibility]
+**Learning:** Icon-only interactive widgets (like the main call toggle button and tab navigation hiding labels on small screens) become completely opaque to screen readers if they lack an `aria-label`. Additionally, these interactive elements often lack clear `focus-visible` states, which makes keyboard navigation difficult.
+**Action:** Always ensure that any button without explicit inner text includes an `aria-label` (or `aria-labelledby`) attribute conveying its action or dynamic state. Ensure that all interactive elements have prominent `focus-visible` classes applied.

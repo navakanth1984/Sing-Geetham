@@ -453,12 +453,13 @@ Exported via Sing Geetham Professional Music Workflow.
                 <button
                   key={tab.id}
                   id={`tab_select_${tab.id}`}
+                  aria-label={tab.label}
                   onClick={() => {
                     setActiveTab(tab.id as any);
                     stopAllSynthesizers();
                     setIsPlaybackActive(false);
                   }}
-                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500 ${
                     isActive
                       ? "bg-amber-500 text-black border-amber-600 shadow-[0_0_15px_rgba(245,158,11,0.4)]"
                       : "text-slate-400 border-white/5 bg-white/5 hover:border-amber-500/50 hover:text-slate-200"
@@ -486,8 +487,9 @@ Exported via Sing Geetham Professional Music Workflow.
                 <span className="text-xs font-bold text-slate-200 truncate max-w-[120px]">{user.displayName}</span>
                 <button
                   id="sign_out_button"
+                  aria-label="Sign Out"
                   onClick={handleSignOut}
-                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1"
+                  className="p-1 text-slate-400 hover:text-red-400 transition ml-1 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-red-400 rounded-md"
                   title="Sign Out Session"
                 >
                   <LogOut className="w-3.5 h-3.5" />
@@ -497,7 +499,7 @@ Exported via Sing Geetham Professional Music Workflow.
               <button
                 id="sign_in_button"
                 onClick={handleGoogleLogin}
-                className="bg-amber-500 hover:bg-amber-400 text-black text-xs px-4 py-2 rounded-full font-bold uppercase tracking-wider transition flex items-center gap-1.5 shadow-[0_0_12px_rgba(245,158,11,0.3)] border border-amber-600"
+                className="bg-amber-500 hover:bg-amber-400 text-black text-xs px-4 py-2 rounded-full font-bold uppercase tracking-wider transition flex items-center gap-1.5 shadow-[0_0_12px_rgba(245,158,11,0.3)] border border-amber-600 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 <User className="w-3.5 h-3.5" />
                 <span>Sign In</span>
@@ -566,7 +568,7 @@ Exported via Sing Geetham Professional Music Workflow.
                       id="generate_sound_track_btn"
                       onClick={handleGenerateHarmony}
                       disabled={isGenerating}
-                      className="bg-white text-black font-extrabold uppercase text-[11px] tracking-widest rounded-xl hover:bg-amber-500 hover:shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all px-6 py-3 shrink-0"
+                      className="bg-white text-black font-extrabold uppercase text-[11px] tracking-widest rounded-xl hover:bg-amber-500 hover:shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all px-6 py-3 shrink-0 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     >
                       {isGenerating ? (
                         <div className="flex items-center gap-2">
@@ -597,7 +599,7 @@ Exported via Sing Geetham Professional Music Workflow.
                         <button
                           id="export_shared_stream"
                           onClick={handleShareOnFeed}
-                          className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl transition"
+                          className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl transition focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                         >
                           <Share2 className="w-3.5 h-3.5" />
                           <span>Post to Feed</span>

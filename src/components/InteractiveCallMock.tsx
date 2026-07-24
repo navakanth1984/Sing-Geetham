@@ -421,8 +421,9 @@ export default function InteractiveCallMock({ onConsumeCredits }: InteractiveCal
           <div className="flex justify-center items-center gap-4 pt-1">
             <button
               id="call_toggle_btn"
+              aria-label={isCallActive ? "End call" : "Start call"}
               onClick={handleToggleCall}
-              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center ${
+              className={`p-4 rounded-full transition-all shadow-xl flex items-center justify-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-500/50 ${
                 isCallActive 
                   ? "bg-rose-600 hover:bg-rose-500 text-white shadow-rose-600/20" 
                   : "bg-amber-500 hover:bg-amber-400 text-black font-extrabold shadow-amber-500/20 duration-300 transform hover:scale-105"
